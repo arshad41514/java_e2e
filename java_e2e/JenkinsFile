@@ -57,7 +57,7 @@ pipeline{
         }        
     }
 
-    post{
+    /*post{
         always{
             emailext body: '''This is the build status
 
@@ -68,5 +68,5 @@ pipeline{
         success{
             build job: 'Project_1'
         }
-    }
+    }*/
 }
