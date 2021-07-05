@@ -31,7 +31,7 @@ pipeline{
                                 {
                                     "files": [
                                         {
-                                            "pattern": "target/*.jar",
+                                            "pattern": "java_e2e/target/*.jar",
                                             "target": "java_e2e/"
                                         }
                                     ]
