@@ -4,7 +4,15 @@ pipeline{
     stages{
         stage ("git clone"){
             steps{
+                sh 'mkdir -p java_e2e'
+                dir("java_e2e"){
                 git credentialsId: '4f383b42-16fd-447c-93db-38a46cdc1519', url: 'https://github.com/arshad41514/java_e2e.git'
+                }
+                
+                sh 'mkdir -p ansible'
+                dir("ansible"){
+                    git credentialsId: '4f383b42-16fd-447c-93db-38a46cdc1519', url: 'https://github.com/arshad41514/ansible_workflow.git'
+                }   
             }
         }
 
@@ -31,7 +39,7 @@ pipeline{
                                 {
                                     "files": [
                                         {
-                                            "pattern": "java_e2e/target/*.jar",
+                                            "pattern": "target/*.jar",
                                             "target": "java_e2e/"
                                         }
                                     ]
@@ -52,7 +60,7 @@ pipeline{
         
         stage ("deploy"){
             steps{
-                echo "ansible-playbook -i inventory e2e.yml"
+                sh 'ansible-playbook -i tom_hosts tom.yml'
             }
         }        
     }
