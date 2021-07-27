@@ -6,7 +6,7 @@ pipeline{
             steps{
                 sh 'mkdir -p applogin'
                 dir("applogin"){
-                git  url: 'https://github.com/tejesh555/applogin.git'
+                git url: 'https://github.com/tejesh555/applogin.git'
                 }
                 
                 sh 'mkdir -p ansible'
