@@ -59,9 +59,7 @@ pipeline{
         
         stage ("deploy"){
             steps{
-                sh 'cd /home/devops/workspace/e2e_java@2/ansible'
-                sh 'pwd'
-                sh 'ansible-playbook -i tom_hosts tom.yml'
+               sh 'ansible-playbook -i /home/devops/workspace/e2e_java/ansibletom_hosts /home/devops/workspace/e2e_java/ansibletom.yml'
             }
         }        
     }
