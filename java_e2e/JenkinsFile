@@ -4,9 +4,9 @@ pipeline{
     stages{
         stage ("git clone"){
             steps{
-                sh 'mkdir -p java_e2e'
+                sh 'mkdir -p applogin'
                 dir("java_e2e"){
-                git credentialsId: '4f383b42-16fd-447c-93db-38a46cdc1519', url: 'https://github.com/arshad41514/java_e2e.git'
+                git credentialsId: '4f383b42-16fd-447c-93db-38a46cdc1519', url: 'https://github.com/arshad41514/applogin.git'
                 }
                 
                 sh 'mkdir -p ansible'
@@ -18,7 +18,7 @@ pipeline{
 
         /*stage ("build"){
             steps{
-                sh 'mvn -f java_e2e/java_e2e/pom.xml clean install'
+                sh 'mvn pom.xml clean install'
             }
         }
 
