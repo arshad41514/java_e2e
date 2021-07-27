@@ -30,7 +30,6 @@ pipeline{
         
         stage ("publish") {
             steps {
-                sh 'cd java_e2e'
                 script {
                     try {
                         rtUpload ( 
@@ -60,6 +59,7 @@ pipeline{
         
         stage ("deploy"){
             steps{
+                sh 'cd /home/devops/workspace/e2e_java@2/ansible'
                 sh 'ansible-playbook -i tom_hosts tom.yml'
             }
         }        
