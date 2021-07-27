@@ -16,7 +16,7 @@ pipeline{
             }
         }
 
-        /*stage ("build"){
+        stage ("build"){
             steps{
                 sh 'mvn pom.xml clean install'
             }
@@ -28,7 +28,7 @@ pipeline{
             }
         }
         
-        stage ("publish") {
+        /*stage ("publish") {
             steps {
                 script {
                     try {
